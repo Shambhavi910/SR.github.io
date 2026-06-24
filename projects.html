@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Shambhavi Roy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container">
+        <div class="nav-brand">SHAMBHAVI ROY</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="assets/cv.pdf" target="_blank" class="nav-resume">Resume ↗</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="container">
+        <div class="section-label">Portfolio</div>
+        <h1>Projects</h1>
+        <p>Production ML systems — all live, all linked.</p>
+    </div>
+</div>
+
+<section class="projects-section">
+    <div class="container">
+        <div class="projects-list">
+
+            <!-- P1 -->
+            <div class="project-card fade-up">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2026</span>
+                        <span class="project-domain">Healthcare · Deep Learning</span>
+                    </div>
+                    <h3>Pneumonia Detection from Chest X-Ray Images</h3>
+                    <p class="project-desc">
+                        Transfer learning system using DenseNet121 on 5,863 chest X-ray images with image preprocessing, data augmentation, and class imbalance handling. Integrated Grad-CAM explainability to visualize the lung regions driving predictions — critical for clinical trust. Deployed as a live Streamlit web app.
+                    </p>
+                    <div class="project-metrics">
+                        <span class="metric">Accuracy <strong>97%</strong></span>
+                        <span class="metric">Precision <strong>99.05%</strong></span>
+                        <span class="metric">Recall <strong>97.9%</strong></span>
+                        <span class="metric">F1 <strong>98.47%</strong></span>
+                        <span class="metric">ROC-AUC <strong>0.993</strong></span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Keras</span>
+                        <span class="tag">DenseNet121</span>
+                        <span class="tag">Grad-CAM</span>
+                        <span class="tag">Transfer Learning</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://pneumonia-detection-1-2r1f.onrender.com" target="_blank" class="link-demo">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shambhavi910/Pneumonia_detection.git" target="_blank" class="link-code">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-side">
+                    <div class="impact-badge">
+                        <span class="big">97%</span>
+                        <span class="caption">Accuracy</span>
+                    </div>
+                    <div class="impact-badge">
+                        <span class="big">0.993</span>
+                        <span class="caption">ROC-AUC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P2 -->
+            <div class="project-card fade-up">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <span class="project-domain">Education · ML Pipeline</span>
+                    </div>
+                    <h3>Student Performance Prediction & Early Warning System</h3>
+                    <p class="project-desc">
+                        End-to-end ML pipeline built on ~1 million academic records to simultaneously predict student scores (regression) and flag at-risk students (classification). Feature selection, normalization, and stratified train-test splitting ensure the model generalises across different academic demographics.
+                    </p>
+                    <div class="project-metrics">
+                        <span class="metric">Classification Acc. <strong>84.5%</strong></span>
+                        <span class="metric">R² Score <strong>0.71</strong></span>
+                        <span class="metric">Records <strong>~1M</strong></span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Regression</span>
+                        <span class="tag">Classification</span>
+                        <span class="tag">Feature Engineering</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://student-performance-prediction-and-early.onrender.com" target="_blank" class="link-demo">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shambhavi910/Student_performance_prediction_and_early_warning_system.git" target="_blank" class="link-code">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-side">
+                    <div class="impact-badge">
+                        <span class="big">84.5%</span>
+                        <span class="caption">Class. Accuracy</span>
+                    </div>
+                    <div class="impact-badge">
+                        <span class="big">1M+</span>
+                        <span class="caption">Records</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P3 -->
+            <div class="project-card fade-up">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <span class="project-domain">Healthcare · Classification</span>
+                    </div>
+                    <h3>Breast Cancer Detection using Machine Learning</h3>
+                    <p class="project-desc">
+                        Logistic Regression classifier on the Wisconsin Breast Cancer dataset with cross-validation, preprocessing, and feature selection. Deployed as a fully interactive Streamlit dashboard with custom Plotly diagnostic plots, patient data templates, and batch CSV upload for multiple patients at once.
+                    </p>
+                    <div class="project-metrics">
+                        <span class="metric">Accuracy <strong>92.9%</strong></span>
+                        <span class="metric">Model <strong>Logistic Regression</strong></span>
+                        <span class="metric">Validation <strong>Cross-validated</strong></span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Plotly</span>
+                        <span class="tag">Batch Processing</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://breast-cancer-detection-zp8n.onrender.com" target="_blank" class="link-demo">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shambhavi910/Breast_Cancer_Detection" target="_blank" class="link-code">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-side">
+                    <div class="impact-badge">
+                        <span class="big">92.9%</span>
+                        <span class="caption">Accuracy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- P4 -->
+            <div class="project-card fade-up">
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <span class="project-domain">Healthcare · Supervised Learning</span>
+                    </div>
+                    <h3>Diabetes Detection using Machine Learning</h3>
+                    <p class="project-desc">
+                        SVM classifier on the Pima Indians Diabetes dataset with EDA to identify key medical indicators. Applied feature scaling and fine-tuned the SVM kernel for optimal performance. Deployed as a live prediction app.
+                    </p>
+                    <div class="project-metrics">
+                        <span class="metric">Accuracy <strong>77%</strong></span>
+                        <span class="metric">Model <strong>SVM</strong></span>
+                    </div>
+                    <div class="tags">
+                        <span class="tag">SVM</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Feature Scaling</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://diabetes-detection-jvfg.onrender.com" target="_blank" class="link-demo">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                        <a href="https://github.com/Shambhavi910/Diabetes_Detection" target="_blank" class="link-code">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                            View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="project-side">
+                    <div class="impact-badge">
+                        <span class="big">77%</span>
+                        <span class="caption">Accuracy</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-brand">SHAMBHAVI ROY</div>
+        <div class="footer-copy">© 2026 · Built with purpose</div>
+        <div class="footer-links">
+            <a href="https://github.com/Shambhavi910" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/shambhavi-roy-402682370" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

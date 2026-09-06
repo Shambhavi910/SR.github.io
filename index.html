@@ -1,228 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shambhavi Roy — Data Science & AI</title>
-    <meta name="description" content="Data Science & AI student at IIT Guwahati building ML solutions in healthcare and social impact.">
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Shambhavi Roy — Data Science & AI</title>
+<meta name="description" content="Shambhavi Roy — Data Science & Artificial Intelligence, IIT Guwahati. Research, machine learning, healthcare AI and computer vision.">
+<style>
+:root{
+  --bg:#02060b;--fg:#f5f7fa;--muted:#9aa5b1;--line:rgba(255,255,255,.12);
+  --cyan:#bfe7ff;--warm:#ffd7b0;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#space{position:fixed;inset:0;width:100%;height:100%;z-index:0;background:#02060b}
+#grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");mix-blend-mode:screen}
+.nav{position:fixed;z-index:20;top:0;left:0;right:0;height:76px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;color:#fff;font-size:13px;letter-spacing:.03em;mix-blend-mode:screen}
+.nav .brand{font-size:18px;font-weight:700;letter-spacing:-.04em}
+.nav .links{display:flex;gap:30px;color:#cbd2da}
+.nav .links a{transition:opacity .2s}.nav .links a:hover{opacity:.55}
+.nav .pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:11px 16px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
+.scrollbar{position:fixed;right:19px;top:50%;transform:translateY(-50%);z-index:21;width:2px;height:150px;background:rgba(255,255,255,.12)}
+.scrollbar i{display:block;width:2px;height:24px;background:#fff;transform-origin:top;transition:height .15s}
+
+main{position:relative;z-index:2}
+.panel{min-height:100vh;position:relative;display:flex;align-items:center;padding:130px 7vw}
+.hero{height:150vh;min-height:950px;align-items:flex-end;padding-bottom:9vh}
+.hero-copy{width:100%;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#b8c1ca;margin-bottom:24px}
+.hero h1{font-size:clamp(86px,13vw,220px);line-height:.78;letter-spacing:-.09em;font-weight:400;margin:0;max-width:1100px}
+.hero h1 span{display:block}
+.hero h1 .dim{color:rgba(255,255,255,.28)}
+.hero-side{max-width:260px;padding-bottom:10px}
+.hero-side p{font-size:15px;line-height:1.45;color:#aeb8c2;margin:0 0 25px}
+.scroll-note{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#e5e9ee}
+.intro{min-height:120vh}
+.intro-inner{max-width:1200px;margin:auto;width:100%}
+.chapter{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8f9aa6;margin-bottom:38px}
+.massive{font-size:clamp(55px,8vw,125px);line-height:.86;letter-spacing:-.075em;font-weight:400;margin:0;max-width:1200px}
+.lede{font-size:clamp(23px,3vw,42px);line-height:1.05;letter-spacing:-.045em;max-width:850px;margin:70px 0 0 auto;color:#d9e0e7}
+.darkfade{background:linear-gradient(180deg,transparent,rgba(0,0,0,.28))}
+.work{min-height:145vh;align-items:flex-start;padding-top:18vh}
+.work-grid{width:100%;display:grid;grid-template-columns:28% 72%;gap:40px}
+.work-title{font-size:clamp(70px,9vw,145px);line-height:.8;letter-spacing:-.08em;font-weight:400;margin:0}
+.project-copy{max-width:800px;margin-top:35vh}
+.project-index{font-size:11px;letter-spacing:.15em;color:#8f9aa6;text-transform:uppercase;margin-bottom:20px}
+.project-name{font-size:clamp(44px,5.8vw,88px);line-height:.9;letter-spacing:-.065em;font-weight:400;margin:0 0 28px}
+.project-copy p{font-size:19px;line-height:1.5;color:#b8c2cc;max-width:690px;margin:0}
+.metric-row{display:flex;gap:48px;margin-top:48px;flex-wrap:wrap}
+.metric .number{font-size:clamp(38px,4vw,62px);letter-spacing:-.06em}
+.metric .label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#7f8b97;margin-top:6px}
+.research{min-height:145vh;align-items:flex-end}
+.research-copy{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
+.research-copy h2{font-size:clamp(75px,11vw,180px);line-height:.78;letter-spacing:-.085em;font-weight:400;margin:0}
+.research-copy .text{max-width:560px;padding-bottom:12px}
+.research-copy p{font-size:20px;line-height:1.5;color:#b8c2cc}
+.meta{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#87939f}
+.results{min-height:120vh}
+.results-inner{width:100%}
+.results-grid{margin-top:80px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.result{padding:32px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+.result:nth-child(3n){border-right:0}
+.result .n{font-size:clamp(48px,6vw,88px);letter-spacing:-.07em}
+.result .l{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:#84909c;margin-top:8px}
+.experience{min-height:125vh}
+.exp-wrap{width:100%}
+.exp-wrap h2{font-size:clamp(70px,10vw,160px);line-height:.8;letter-spacing:-.085em;font-weight:400;margin:0 0 100px}
+.exp-line{border-top:1px solid var(--line);padding:35px 0;display:grid;grid-template-columns:25% 75%;gap:30px}
+.exp-line .date{font-size:10px;letter-spacing:.14em;color:#84909c;text-transform:uppercase}
+.exp-line h3{font-size:32px;line-height:1;letter-spacing:-.04em;font-weight:400;margin:0 0 16px}
+.exp-line p{font-size:17px;line-height:1.55;color:#aeb8c2;max-width:800px;margin:0}
+.education{min-height:110vh}
+.edu-wrap{width:100%;display:grid;grid-template-columns:30% 70%;gap:50px}
+.edu-wrap h2{font-size:clamp(70px,9vw,145px);line-height:.8;letter-spacing:-.08em;font-weight:400;margin:0}
+.edu-list{border-top:1px solid var(--line)}
+.edu{padding:30px 0;border-bottom:1px solid var(--line)}
+.edu .date{font-size:10px;letter-spacing:.14em;color:#84909c;text-transform:uppercase}
+.edu h3{font-size:27px;letter-spacing:-.04em;font-weight:400;margin:12px 0 8px}
+.edu p{margin:0;color:#aeb8c2;line-height:1.5}
+.skills{min-height:100vh}
+.skills h2{font-size:clamp(72px,10vw,160px);line-height:.8;letter-spacing:-.085em;font-weight:400;margin:0 0 90px}
+.skill-cloud{display:flex;flex-wrap:wrap;gap:12px;max-width:1000px}
+.skill-cloud span{padding:13px 17px;border:1px solid rgba(255,255,255,.15);border-radius:999px;color:#b8c2cc;font-size:13px;background:rgba(255,255,255,.025)}
+.contact{min-height:120vh;align-items:flex-end}
+.contact-inner{width:100%;padding-bottom:6vh}
+.contact h2{font-size:clamp(76px,12vw,190px);line-height:.78;letter-spacing:-.09em;font-weight:400;margin:0 0 70px}
+.contact-links{display:flex;flex-wrap:wrap;gap:30px;font-size:13px;letter-spacing:.06em}
+.contact-links a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:5px}
+.footer{padding:25px 7vw 35px;display:flex;justify-content:space-between;color:#6f7a85;font-size:10px;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:3}
+.reduced #space{opacity:.75}
+@media(max-width:800px){
+ .nav{height:64px;padding:0 5vw}.nav .links{display:none}.nav .pill{display:none}
+ .panel{padding:110px 5vw}.hero{height:120vh;min-height:760px;padding-bottom:9vh}
+ .hero-copy,.research-copy,.work-grid,.edu-wrap,.exp-line{grid-template-columns:1fr;gap:25px}
+ .hero-side{max-width:430px}.massive{font-size:58px}.lede{margin-left:0;font-size:25px}
+ .work{min-height:130vh}.project-copy{margin-top:28vh}.work-title{font-size:75px}
+ .research{min-height:120vh}.research-copy h2{font-size:78px}
+ .results-grid{grid-template-columns:1fr 1fr}.result:nth-child(3n){border-right:1px solid var(--line)}.result:nth-child(2n){border-right:0}
+ .exp-wrap h2{font-size:75px}.exp-line h3{font-size:26px}
+ .edu-wrap h2{font-size:75px}.contact h2{font-size:78px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reduced #space{opacity:.8}}
+</style>
 </head>
 <body>
+<canvas id="space" aria-hidden="true"></canvas>
+<div id="grain" aria-hidden="true"></div>
 
-<nav class="navbar" id="navbar">
-    <div class="container">
-        <div class="nav-brand">SHAMBHAVI ROY</div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="assets/cv.pdf" target="_blank" class="nav-resume">Resume ↗</a></li>
-        </ul>
-    </div>
-</nav>
+<header class="nav">
+  <a class="brand" href="#top">SHAMBHAVI ROY</a>
+  <nav class="links">
+    <a href="#research">RESEARCH</a><a href="#work">WORK</a><a href="#experience">EXPERIENCE</a><a href="#about">ABOUT</a>
+  </nav>
+  <a class="pill" href="#contact">LET'S CONNECT ↗</a>
+</header>
+<div class="scrollbar" aria-hidden="true"><i id="scrollMeter"></i></div>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-bg"></div>
-    <div class="container">
-        <div class="hero-grid">
-            <div class="hero-text">
-                <div class="hero-eyebrow">
-                    <span class="dot"></span>
-                    IIT Guwahati · Data Science & AI
-                </div>
-                <h1>
-                    Building AI<br>
-                    that <span class="highlight">improves lives</span>
-                </h1>
-                <p class="hero-subtitle">
-                    I'm Shambhavi Roy — a Data Science & AI student turning complex data into working ML systems across healthcare, computer vision, and social impact. I build things that are technically rigorous and genuinely useful.
-                </p>
-                <div class="hero-actions">
-                    <a href="projects.html" class="btn-primary">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-                        View Projects
-                    </a>
-                    <a href="assets/cv.pdf" target="_blank" class="btn-secondary">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download CV
-                    </a>
-                </div>
-                <div class="hero-meta">
-                    <span class="meta-item">
-                        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
-                        Korba, Chhattisgarh
-                    </span>
-                    <span class="meta-item">
-                        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.17a16 16 0 006.92 6.92l1.53-1.53a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        Open to opportunities
-                    </span>
-                    <span class="meta-item">
-                        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                        4+ deployed ML projects
-                    </span>
-                </div>
-            </div>
-            <div class="hero-card-area">
-                <div class="hero-stats-card">
-                    <div class="stats-header">At a glance</div>
-                    <div class="stats-grid">
-                        <div class="stat-box">
-                            <div class="num">97<span>%</span></div>
-                            <div class="label">Best model accuracy</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="num">7.52</div>
-                            <div class="label">IIT Guwahati CPI</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="num">1M<span>+</span></div>
-                            <div class="label">Records processed</div>
-                        </div>
-                        <div class="stat-box">
-                            <div class="num">4<span>+</span></div>
-                            <div class="label">Live deployments</div>
-                        </div>
-                    </div>
-                    <div class="stats-header" style="margin-bottom:0.75rem;">Focus areas</div>
-                    <div class="focus-areas">
-                        <span class="focus-tag">Healthcare AI</span>
-                        <span class="focus-tag">Computer Vision</span>
-                        <span class="focus-tag">ML Pipelines</span>
-                        <span class="focus-tag">Social Impact</span>
-                        <span class="focus-tag">Explainable AI</span>
-                        <span class="focus-tag">Data Science</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+<main id="top">
+<section class="panel hero" data-scene="0">
+  <div class="hero-copy">
+    <div>
+      <div class="eyebrow">B.Sc. (Hons.) Data Science & Artificial Intelligence · IIT Guwahati</div>
+      <h1><span>Shambhavi</span><span class="dim">Roy.</span></h1>
     </div>
+    <div class="hero-side">
+      <p>Researching, building and evaluating machine-learning systems across healthcare, computer vision and data science.</p>
+      <div class="scroll-note">Scroll to enter the field ↓</div>
+    </div>
+  </div>
 </section>
 
-<!-- SKILLS STRIP -->
-<section class="skills-section">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-label">Technical Stack</div>
-            <h2 class="section-title">What I work with</h2>
-        </div>
-        <div class="skills-categories">
-            <div class="skill-cat fade-up">
-                <div class="skill-cat-icon">🤖</div>
-                <h4>AI & Machine Learning</h4>
-                <div class="skill-pills">
-                    <span class="skill-pill">TensorFlow</span>
-                    <span class="skill-pill">Keras</span>
-                    <span class="skill-pill">Scikit-learn</span>
-                    <span class="skill-pill">Deep Learning</span>
-                    <span class="skill-pill">Computer Vision</span>
-                    <span class="skill-pill">Transfer Learning</span>
-                    <span class="skill-pill">Grad-CAM</span>
-                </div>
-            </div>
-            <div class="skill-cat fade-up">
-                <div class="skill-cat-icon">🐍</div>
-                <h4>Languages & Data</h4>
-                <div class="skill-pills">
-                    <span class="skill-pill">Python</span>
-                    <span class="skill-pill">R</span>
-                    <span class="skill-pill">SQL</span>
-                    <span class="skill-pill">Pandas</span>
-                    <span class="skill-pill">NumPy</span>
-                    <span class="skill-pill">Plotly</span>
-                    <span class="skill-pill">Matplotlib</span>
-                </div>
-            </div>
-            <div class="skill-cat fade-up">
-                <div class="skill-cat-icon">🚀</div>
-                <h4>Tools & Deployment</h4>
-                <div class="skill-pills">
-                    <span class="skill-pill">Streamlit</span>
-                    <span class="skill-pill">Git / GitHub</span>
-                    <span class="skill-pill">Render</span>
-                    <span class="skill-pill">Jupyter</span>
-                    <span class="skill-pill">HTML/CSS/JS</span>
-                    <span class="skill-pill">DBMS</span>
-                    <span class="skill-pill">Cloud Computing</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<section class="panel intro" id="about" data-scene="1">
+  <div class="intro-inner">
+    <div class="chapter">01 — A direction</div>
+    <h2 class="massive">Building systems<br>that learn.</h2>
+    <p class="lede">I’m a third-year undergraduate at IIT Guwahati studying Data Science and Artificial Intelligence. I like taking a messy problem, finding structure in the data, and measuring whether the resulting model actually works.</p>
+  </div>
 </section>
 
-<!-- FEATURED PROJECTS -->
-<section class="featured-section">
-    <div class="container">
-        <div class="section-head">
-            <div class="section-label">Work</div>
-            <h2 class="section-title">Featured projects</h2>
-            <p class="section-sub">Production-deployed ML systems solving real medical and educational problems.</p>
-        </div>
-        <div class="feat-grid">
-            <a href="projects.html" class="feat-card fade-up">
-                <div class="feat-card-num">01</div>
-                <div class="feat-acc">Healthcare · Deep Learning</div>
-                <h3>Pneumonia Detection from Chest X-Ray</h3>
-                <p>DenseNet121 + Grad-CAM explainability. Trained on 5,863 X-rays. Deployed as Streamlit app.</p>
-                <div class="feat-metric">
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    97% accuracy · 99% precision
-                </div>
-            </a>
-            <a href="projects.html" class="feat-card fade-up">
-                <div class="feat-card-num">02</div>
-                <div class="feat-acc">Education · ML Pipeline</div>
-                <h3>Student Performance & Early Warning System</h3>
-                <p>End-to-end pipeline on ~1M academic records. Predicts scores and flags at-risk students.</p>
-                <div class="feat-metric">
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    84.5% classification accuracy
-                </div>
-            </a>
-            <a href="projects.html" class="feat-card fade-up">
-                <div class="feat-card-num">03</div>
-                <div class="feat-acc">Healthcare · Classification</div>
-                <h3>Breast Cancer Detection</h3>
-                <p>Logistic Regression on Wisconsin dataset with interactive Plotly dashboard and batch CSV processing.</p>
-                <div class="feat-metric">
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                    92.9% accuracy
-                </div>
-            </a>
-        </div>
-        <div style="text-align:center; margin-top:2rem;">
-            <a href="projects.html" class="btn-secondary">View all projects →</a>
-        </div>
+<section class="panel work" id="work" data-scene="2">
+  <div class="work-grid">
+    <div>
+      <div class="chapter">02 — Selected work</div>
+      <h2 class="work-title">Projects<br>that perform.</h2>
     </div>
+    <div class="project-copy">
+      <div class="project-index" id="projectIndex">01 / 04 — MACHINE LEARNING</div>
+      <h3 class="project-name" id="projectName">Student Performance Prediction & Early Warning System</h3>
+      <p id="projectText">An end-to-end pipeline built from approximately 1 million academic records, combining regression for score prediction with classification for identifying at-risk students.</p>
+      <div class="metric-row" id="projectMetrics">
+        <div class="metric"><div class="number">R² 0.71</div><div class="label">Regression score</div></div>
+        <div class="metric"><div class="number">84.5%</div><div class="label">Classification accuracy</div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-inner fade-up">
-            <h2>Let's build something meaningful</h2>
-            <p>I'm actively looking for internship and research opportunities. If you're working on problems at the intersection of AI and real-world impact, I'd love to talk.</p>
-            <div class="cta-actions">
-                <a href="contact.html" class="btn-primary">Get in touch</a>
-                <a href="about.html" class="btn-secondary">Learn more about me</a>
-            </div>
-        </div>
+<section class="panel research" id="research" data-scene="3">
+  <div class="research-copy">
+    <div>
+      <div class="chapter">03 — Research</div>
+      <h2>Healthcare<br>AI.</h2>
     </div>
+    <div class="text">
+      <div class="meta">IIT JODHPUR · REMOTE RESEARCH INTERN · 20 MAY — 19 JUL 2026</div>
+      <p>Under Dr. Bikash Santra, I contributed to an AI-driven healthcare research project exploring a multimodal machine-learning pipeline for heart-failure readmission prediction.</p>
+      <p>The work involved literature review, experimental analysis, model development and evaluation using public clinical datasets, with a focus on improving predictive performance and clinical applicability.</p>
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
-    <div class="container">
-        <div class="footer-brand">SHAMBHAVI ROY</div>
-        <div class="footer-copy">© 2026 · Built with purpose</div>
-        <div class="footer-links">
-            <a href="https://github.com/Shambhavi910" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/shambhavi-roy-402682370" target="_blank">LinkedIn</a>
-            <a href="mailto:shambhavi10231@gmail.com">Email</a>
-        </div>
+<section class="panel results" data-scene="4">
+  <div class="results-inner">
+    <div class="chapter">04 — Evidence</div>
+    <h2 class="massive">A portfolio<br>of numbers.</h2>
+    <div class="results-grid">
+      <div class="result"><div class="n">~1M</div><div class="l">Academic records</div></div>
+      <div class="result"><div class="n">5,863</div><div class="l">Chest X-ray images</div></div>
+      <div class="result"><div class="n">97%</div><div class="l">Pneumonia accuracy</div></div>
+      <div class="result"><div class="n">99.05%</div><div class="l">Pneumonia precision</div></div>
+      <div class="result"><div class="n">0.993</div><div class="l">ROC-AUC</div></div>
+      <div class="result"><div class="n">92.9%</div><div class="l">Breast cancer accuracy</div></div>
     </div>
-</footer>
+  </div>
+</section>
 
-<script src="script.js"></script>
+<section class="panel experience" id="experience" data-scene="5">
+  <div class="exp-wrap">
+    <div class="chapter">05 — Experience</div>
+    <h2>Beyond<br>the notebook.</h2>
+    <div class="exp-line">
+      <div class="date">2020 — Present<br>Korba, Chhattisgarh</div>
+      <div>
+        <h3>Co-Founder & Operations Manager · My Daffodil School</h3>
+        <p>Led daily operations for a primary school serving 50+ students and 8 staff. Maintained and analyzed attendance, academic performance and fee data; structured tracking systems; coordinated schedules, admissions and parent communications; and helped digitize manual records to improve operational efficiency.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel education" data-scene="6">
+  <div class="edu-wrap">
+    <div><div class="chapter">06 — Education</div><h2>Learning<br>across<br>disciplines.</h2></div>
+    <div class="edu-list">
+      <div class="edu"><div class="date">2023 — Present</div><h3>Indian Institute of Technology, Guwahati</h3><p>B.Sc. (Hons.) — Data Science and Artificial Intelligence · CPI 7.52 / 10</p></div>
+      <div class="edu"><div class="date">2020 — 2023</div><h3>E.V.P.G. College, Korba</h3><p>B.Sc. Mathematics · 70%</p></div>
+      <div class="edu"><div class="date">Selected coursework</div><p>Linear Algebra · Probability & Statistics · Statistical Inference · Optimization · Time Series Analysis · Data Structures · Algorithms · DBMS · Cloud Computing · Machine Learning Fundamentals · Deep Learning · Computer Vision · Recommender Systems · Data Mining & Warehousing · Data Visualization · Ethics in AI</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="panel skills" data-scene="7">
+  <div style="width:100%">
+    <div class="chapter">07 — Toolbox</div>
+    <h2>Tools I use<br>to think.</h2>
+    <div class="skill-cloud">
+      <span>Python</span><span>R</span><span>C</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Scikit-learn</span><span>TensorFlow</span><span>Keras</span><span>SQL</span><span>Git</span><span>GitHub</span><span>Streamlit</span><span>Jupyter</span><span>Google Colab</span><span>Kaggle</span><span>Computer Vision</span><span>Explainable AI</span><span>Grad-CAM</span><span>Feature Engineering</span><span>Cross-validation</span><span>Hyperparameter Tuning</span><span>Healthcare Analytics</span>
+    </div>
+  </div>
+</section>
+
+<section class="panel contact" id="contact" data-scene="8">
+  <div class="contact-inner">
+    <div class="chapter">08 — Contact</div>
+    <h2>Let’s build<br>something<br>useful.</h2>
+    <div class="contact-links">
+      <a href="mailto:shambhavi10231@gmail.com">shambhavi10231@gmail.com ↗</a>
+      <a href="https://github.com/Shambhavi910" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://linkedin.com/in/shambhavi-roy-402682370" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="tel:+919399250560">+91 93992 50560 ↗</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><span>SHAMBHAVI ROY</span><span>DATA SCIENCE · AI · RESEARCH</span></footer>
+
+<script>
+(() => {
+  const canvas = document.getElementById('space');
+  const ctx = canvas.getContext('2d', {alpha:false});
+  const meter = document.getElementById('scrollMeter');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W=0,H=0, particles=[], stars=[], scrollP=0, targetP=0, last=performance.now(), raf=0;
+  const TAU=Math.PI*2;
+  const projects=[
+    {
+      idx:'01 / 04 — MACHINE LEARNING',
+      name:'Student Performance Prediction & Early Warning System',
+      text:'An end-to-end pipeline built from approximately 1 million academic records, combining regression for score prediction with classification for identifying at-risk students.',
+      metrics:[['R² 0.71','Regression score'],['84.5%','Classification accuracy']]
+    },
+    {
+      idx:'02 / 04 — DEEP LEARNING',
+      name:'Pneumonia Detection from Chest X-Ray Images',
+      text:'DenseNet121 transfer learning with preprocessing, augmentation, class-imbalance handling, fine-tuning, Grad-CAM explainability and Streamlit deployment.',
+      metrics:[['97%','Accuracy'],['0.993','ROC-AUC']]
+    },
+    {
+      idx:'03 / 04 — SUPERVISED LEARNING',
+      name:'Diabetes Detection using Machine Learning',
+      text:'SVM-based prediction using the Pima Indians Diabetes dataset, including exploratory analysis and feature scaling.',
+      metrics:[['77%','Accuracy'],['SVM','Model']]
+    },
+    {
+      idx:'04 / 04 — CLASSIFICATION',
+      name:'Breast Cancer Detection using Machine Learning',
+      text:'Logistic Regression classification using the Wisconsin Breast Cancer dataset, with preprocessing, normalization, feature selection and cross-validation.',
+      metrics:[['92.9%','Accuracy'],['CV','Cross-validation']]
+    }
+  ];
+
+  function resize(){
+    W=window.innerWidth; H=window.innerHeight;
+    canvas.width=Math.floor(W*dpr); canvas.height=Math.floor(H*dpr);
+    canvas.style.width=W+'px'; canvas.style.height=H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    makeParticles();
+  }
+
+  function makeParticles(){
+    const count=Math.min(2300, Math.max(900, Math.floor(W*H/650)));
+    particles=[];
+    for(let i=0;i<count;i++){
+      const arm=Math.floor(Math.random()*4);
+      const r=Math.pow(Math.random(),.65);
+      const angle=r*TAU*1.75 + arm*(TAU/4) + (Math.random()-.5)*.35;
+      particles.push({
+        r:55+r*Math.min(W,H)*.42,
+        a:angle,
+        arm,
+        z:Math.random(),
+        size:Math.random()<.07?2.3+Math.random()*2.4:.55+Math.random()*1.5,
+        phase:Math.random()*TAU,
+        speed:.00025+Math.random()*.0012,
+        warm:Math.random()<.14
+      });
+    }
+    stars=Array.from({length:Math.min(900,Math.max(350,Math.floor(W*H/1700)))},()=>({
+      x:Math.random(),y:Math.random(),z:.1+Math.random()*.9,s:.25+Math.random()*1.25,p:Math.random()*TAU
+    }));
+  }
+
+  function smooth(t){return t*t*(3-2*t)}
+  function sceneAt(p){
+    const total=document.body.scrollHeight-innerHeight;
+    return total>0 ? Math.min(1,Math.max(0,p/total)) : 0;
+  }
+  function galaxyParticle(pt, t){
+    const min=Math.min(W,H), cx=W*.52, cy=H*.51;
+    const scene=scrollP*8;
+    const drift=t*pt.speed*100;
+    let a=pt.a + drift + scene*.48;
+    let rr=pt.r;
+    // As the user scrolls, the galaxy changes from a broad spiral into tighter rings,
+    // then into a constellation-like field, then expands again.
+    const local=(scrollP*8)%1;
+    const section=Math.floor(scrollP*8);
+    const morph=Math.sin(local*Math.PI);
+    if(section===0){ rr*=1 + .12*Math.sin(local*Math.PI); }
+    if(section===1){ rr*=1-.46*smooth(local); a*=1+.18*smooth(local); }
+    if(section===2){ rr*=.54+.42*smooth(local); a+=Math.sin(local*Math.PI)*1.1; }
+    if(section===3){ rr*=1.15-.55*smooth(local); a+=local*2.8; }
+    if(section===4){ rr*=.6+.7*smooth(local); a+=Math.sin(local*Math.PI)*2.2; }
+    if(section===5){ rr*=1.3-.75*smooth(local); a-=local*2.2; }
+    if(section===6){ rr*=.58+.65*smooth(local); }
+    if(section>=7){ rr*=1.05+.55*smooth(local); a+=local*1.8; }
+    const perspective=0.58+pt.z*.62;
+    let x=cx+Math.cos(a)*rr*perspective;
+    let y=cy+Math.sin(a)*rr*(.55+.35*pt.z);
+    const depthGlow=(1-rr/(min*.52));
+    const pulse=1+.14*Math.sin(t*.001+pt.phase);
+    const size=Math.max(.35,pt.size*(.6+pt.z*1.8)*pulse*(1+Math.max(0,depthGlow)*1.7));
+    return {x,y,size,bright:Math.max(0,depthGlow),warm:pt.warm};
+  }
+
+  function draw(t){
+    ctx.fillStyle='#02060b';
+    ctx.fillRect(0,0,W,H);
+
+    // deep stars
+    for(const s of stars){
+      const x=(s.x*W + Math.sin(t*.00008+s.p)*18*s.z)%W;
+      const y=(s.y*H + Math.cos(t*.00006+s.p)*10*s.z)%H;
+      const tw=.45+.55*Math.sin(t*.001*s.z+s.p);
+      ctx.globalAlpha=.22+.45*tw*s.z;
+      ctx.fillStyle='#d9ecff';
+      ctx.beginPath();ctx.arc(x<0?x+W:x,y,s.s,0,TAU);ctx.fill();
+    }
+
+    // soft galactic glow
+    const g=ctx.createRadialGradient(W*.52,H*.51,0,W*.52,H*.51,Math.min(W,H)*.48);
+    g.addColorStop(0,'rgba(235,245,255,.16)');
+    g.addColorStop(.13,'rgba(140,200,255,.07)');
+    g.addColorStop(.48,'rgba(80,145,205,.025)');
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g;ctx.globalAlpha=1;ctx.fillRect(0,0,W,H);
+
+    ctx.globalCompositeOperation='lighter';
+    for(const pt of particles){
+      const q=galaxyParticle(pt,t);
+      const alpha=.18 + q.bright*.7;
+      ctx.globalAlpha=alpha;
+      ctx.fillStyle=pt.warm?'#ffd9bd':'#d9edff';
+      if(q.size>2.1){
+        ctx.shadowBlur=12;
+        ctx.shadowColor=pt.warm?'rgba(255,196,154,.7)':'rgba(180,220,255,.8)';
+      }else ctx.shadowBlur=0;
+      ctx.beginPath();ctx.arc(q.x,q.y,q.size,0,TAU);ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    // central star
+    const core=ctx.createRadialGradient(W*.52,H*.51,0,W*.52,H*.51,75);
+    core.addColorStop(0,'rgba(255,255,255,.95)');
+    core.addColorStop(.08,'rgba(230,244,255,.65)');
+    core.addColorStop(.35,'rgba(140,205,255,.16)');
+    core.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.globalAlpha=.85;
+    ctx.fillStyle=core;ctx.beginPath();ctx.arc(W*.52,H*.51,75,0,TAU);ctx.fill();
+    ctx.globalCompositeOperation='source-over';
+    ctx.globalAlpha=1;
+  }
+
+  function updateProject(){
+    const idx=Math.min(projects.length-1,Math.floor(Math.min(0.999,scrollP*8)));
+    const p=projects[idx];
+    document.getElementById('projectIndex').textContent=p.idx;
+    document.getElementById('projectName').textContent=p.name;
+    document.getElementById('projectText').textContent=p.text;
+    document.getElementById('projectMetrics').innerHTML=p.metrics.map(m=>`<div class="metric"><div class="number">${m[0]}</div><div class="label">${m[1]}</div></div>`).join('');
+  }
+
+  function loop(now){
+    const dt=Math.min(40,now-last);last=now;
+    targetP=window.scrollY/(Math.max(1,document.body.scrollHeight-innerHeight));
+    scrollP += (targetP-scrollP)*Math.min(1,dt*.008);
+    meter.style.height=(24+scrollP*126)+'px';
+    updateProject();
+    draw(now);
+    if(!reduce) raf=requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('scroll',()=>{ if(reduce){targetP=window.scrollY/(Math.max(1,document.body.scrollHeight-innerHeight));scrollP=targetP;draw(performance.now());updateProject();}},{passive:true});
+  window.addEventListener('resize',resize);
+  resize();
+  if(reduce){scrollP=0;draw(performance.now());updateProject();}else raf=requestAnimationFrame(loop);
+})();
+</script>
 </body>
 </html>
